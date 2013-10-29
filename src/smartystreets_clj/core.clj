@@ -31,7 +31,7 @@
 	(fetch zipcode-url zipcode-request-fields))
 
 (defn zipcode->city-state
-	[auth zipcode]
-	(-> (zipcode auth {:zipcode zipcode})
+	[auth zip]
+	(-> (zipcode auth {:zipcode zip})
 		  :city_states
 		  first))
