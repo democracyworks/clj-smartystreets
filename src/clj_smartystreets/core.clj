@@ -16,22 +16,22 @@
 
 
 (defn- fetch
-	[endpoint fields]
-	(fn 
-		[auth address-params]
-	  (->> (select-keys address-params fields)
-	  	(do-request endpoint auth)
-	  	:body
-	  	first)))
+  [endpoint fields]
+  (fn 
+    [auth address-params]
+    (->> (select-keys address-params fields)
+      (do-request endpoint auth)
+      :body
+      first)))
 
 (def street-address
-	(fetch street-address-url street-address-request-fields))
+  (fetch street-address-url street-address-request-fields))
 
 (def zipcode
-	(fetch zipcode-url zipcode-request-fields))
+  (fetch zipcode-url zipcode-request-fields))
 
 (defn zipcode->city-state
-	[auth zip]
-	(-> (zipcode auth {:zipcode zip})
-		  :city_states
-		  first))
+  [auth zip]
+  (-> (zipcode auth {:zipcode zip})
+      :city_states
+      first))
