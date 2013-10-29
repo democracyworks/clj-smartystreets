@@ -1,4 +1,4 @@
-(ns smartystreets-clj.core
+(ns clj-smartystreets.core
   (:require [clj-http.client :as client]
             [clojure.string :refer [join blank?]]))
 

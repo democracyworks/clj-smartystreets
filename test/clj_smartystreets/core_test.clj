@@ -1,7 +1,7 @@
-(ns smartystreets-clj.core-test
+(ns clj-smartystreets.core-test
 	(:use [midje.sweet])
   (:require [clj-http.client :as client]
-            [smartystreets-clj.core :refer :all]))
+            [clj-smartystreets.core :refer :all]))
 
 (facts "base endpoints fetch"
 	(doseq [endpoint [{:fn street-address :url street-address-url}
