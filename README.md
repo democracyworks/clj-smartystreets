@@ -59,8 +59,7 @@ ExceptionInfo clj-http: status 401  clj-http.client/wrap-exceptions/fn--2764 (cl
 
 To run the tests:
 
-    $ lein deps
-    $ lein midje
+    $ lein test
 
 ## License
 
