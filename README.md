@@ -4,7 +4,11 @@ A Clojure library wrapping SmartyStreets' LiveAddress API.
 
 ## Installation
 
-Fill this in once it's on clojars.
+`clj-http` is available as a Maven artifact from
+[Clojars](http://clojars.org/clj-smartystreets):
+```clojure
+[clj-smartystreets "0.1.1"]
+```
 
 ## Usage
 
