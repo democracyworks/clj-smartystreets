@@ -1,6 +1,8 @@
 (ns clj-smartystreets.core
   (:require [clj-http.client :as client]
-            [clojure.string :refer [join blank?]]))
+            [clojure.string :refer [join blank?]]
+            [cheshire.core :refer [generate-string]])
+  (:import [clojure.lang Sequential]))
 
 (def street-address-url "https://api.smartystreets.com/street-address")
 (def zipcode-url "https://api.smartystreets.com/zipcode")
@@ -10,28 +12,37 @@
 
 (defn- do-request
   "make a call to the smartystreets service"
-  ;{:method GET :url URL :query-params QUERY-PARAMS}
-  [url auth query-params]
-  (client/get url {:as :json :query-params (merge query-params auth)}))
+  [url auth queries]
+  (client/post url {:as :json :query-params auth
+                    :body (generate-string queries)}))
 
+(defn- query->response [responses idx query]
+  (first (filter #(= idx (:input_index %)) responses)))
 
-(defn- fetch
-  [endpoint fields]
-  (fn 
-    [auth address-params]
-    (->> (select-keys address-params fields)
-      (do-request endpoint auth)
-      :body
-      first)))
+(defn- fetch [endpoint fields]
+  (fn [auth address-queries]
+    (let [responses (->> (map #(select-keys % fields) address-queries)
+                         (do-request endpoint auth)
+                         :body)]
+      (map-indexed (partial query->response responses) address-queries))))
+
+(defmulti norm (fn [fun auth coll] (type coll)))
+(defmethod norm Sequential [fun auth coll]
+  (fun auth coll))
+(defmethod norm :default [fun auth coll]
+  (first (fun auth [coll])))
 
 (def street-address
-  (fetch street-address-url street-address-request-fields))
+  (partial norm (fetch street-address-url street-address-request-fields)))
 
 (def zipcode
-  (fetch zipcode-url zipcode-request-fields))
+  (partial norm (fetch zipcode-url zipcode-request-fields)))
 
-(defn zipcode->city-state
-  [auth zip]
-  (-> (zipcode auth {:zipcode zip})
-      :city_states
-      first))
+(def zipcode->city-state
+  (partial norm
+           (fn [auth zipcodes]
+             (->> zipcodes
+                  (map (fn [zipcode] {:zipcode zipcode}))
+                  (zipcode auth)
+                  (map :city_states)
+                  (map first)))))
