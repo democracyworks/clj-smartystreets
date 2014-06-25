@@ -7,7 +7,7 @@ A Clojure library wrapping SmartyStreets' LiveAddress API.
 `clj-smartystreets` is available as a Maven artifact from
 [Clojars](http://clojars.org/clj-smartystreets):
 ```clojure
-[clj-smartystreets "0.1.1"]
+[clj-smartystreets "0.1.2"]
 ```
 
 ## Usage
