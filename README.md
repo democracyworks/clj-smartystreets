@@ -2,6 +2,8 @@
 
 A Clojure library wrapping SmartyStreets' LiveAddress API.
 
+[![Build Status](https://travis-ci.org/democracyworks/clj-smartystreets.svg?branch=master)](https://travis-ci.org/democracyworks/clj-smartystreets)
+
 ## Installation
 
 `clj-smartystreets` is available as a Maven artifact from
