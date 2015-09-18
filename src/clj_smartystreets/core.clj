@@ -14,7 +14,8 @@
   "make a call to the smartystreets service"
   [url auth queries]
   (client/post url {:as :json :query-params auth
-                    :body (generate-string queries)}))
+                    :body (generate-string queries)
+                    :headers {"X-Include-Invalid" true}}))
 
 (defn- query->response [responses idx query]
   (first (filter #(= idx (:input_index %)) responses)))
