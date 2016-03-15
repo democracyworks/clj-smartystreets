@@ -15,7 +15,7 @@
   [url auth queries]
   (client/post url {:as :json :query-params auth
                     :body (generate-string queries)
-                    :headers {"X-Include-Invalid" true}}))
+                    :headers {"X-Include-Invalid" "true"}}))
 
 (defn- query->response [responses idx query]
   (first (filter #(= idx (:input_index %)) responses)))
