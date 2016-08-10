@@ -5,7 +5,7 @@
   (:import [clojure.lang Sequential]))
 
 (def street-address-url "https://api.smartystreets.com/street-address")
-(def zipcode-url "https://api.smartystreets.com/zipcode")
+(def zipcode-url "https://us-zipcode.api.smartystreets.com/lookup")
 
 (def street-address-request-fields [:street :street2 :secondary :city :state :zipcode :lastline :addressee :urbanization])
 (def zipcode-request-fields [:city :state :zipcode])
