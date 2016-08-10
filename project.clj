@@ -1,4 +1,4 @@
-(defproject clj-smartystreets "0.1.5-SNAPSHOT"
+(defproject clj-smartystreets "0.1.5"
   :description "A Clojure library wrapping SmartyStreets' LiveAddress API."
   :url "https://github.com/democracyworks/clj-smartystreets"
   :license {:name "Eclipse Public License"
