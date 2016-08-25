@@ -9,4 +9,5 @@
                  [cheshire "5.6.3"]]
   :profiles {:dev {:dependencies [[midje "1.8.3"]]}}
   :plugins [[lein-midje "3.2"]]
-  :aliases {"test" ["with-profile" "+test" "midje"]})
+  :aliases {"test" ["with-profile" "+test" "midje"]}
+  :deploy-repositories {"releases" :clojars})
