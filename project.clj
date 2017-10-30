@@ -8,6 +8,7 @@
                  [cheshire "5.8.0"]]
   :profiles {:dev {:dependencies [[clj-http-fake "1.0.3"]
                                   [midje "1.9.0-alpha10"]]
+                   :repl-options {:init-ns dev.user}
                    :source-paths ["dev-src"]}}
   :plugins [[lein-midje "3.2.1"]]
   :aliases {"test" ["do" ["with-profile" "+test" "midje"]
