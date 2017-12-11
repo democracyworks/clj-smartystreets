@@ -22,11 +22,11 @@ namespaces is optional.
 Require it at the REPL:
 
 ```clojure
-(require '[democracyworks.smartystreets.core :as ss])
+(require '[democracyworks.smartystreets.core :as smartystreets])
 ;; Optional
-(require '[democracyworks.smartystreets.api.us-street :as us-street])
+(require '[democracyworks.smartystreets.us-street :as us-street])
 ;; Optional
-(require '[democracyworks.smartystreets.api.us-zipcode :as us-zipcode])
+(require '[democracyworks.smartystreets.us-zipcode :as us-zipcode])
 ```
 
 **OR**
@@ -36,11 +36,11 @@ Require it in your application:
 ```clojure
 (ns my-app.core
   (:require
-   [democracyworks.smartystreets.core :as ss]
+   [democracyworks.smartystreets.core :as smartystreets]
    ;; Optional
-   [democracyworks.smartystreets.api.us-street :as us-street]
+   [democracyworks.smartystreets.us-street :as us-street]
    ;; Optional
-   [democracyworks.smartystreets.api.us-zipcode :as us-zipcode]))
+   [democracyworks.smartystreets.us-zipcode :as us-zipcode]))
 ```
 
 Next, you can create a client map holding your authentication information and
@@ -50,7 +50,8 @@ pass this to the API functions to call the API:
 ;; Construct the client map. You can find the Auth ID and Auth Token in the
 ;; SmartyStreets console.
 #_=> (def client
-       (ss/client "smartystreets-auth-id" "smartystreets-auth-token"))
+       (smartystreets/client "smartystreets-auth-id"
+                             "smartystreets-auth-token"))
 
 ;; Look up a single street address.
 ;;
