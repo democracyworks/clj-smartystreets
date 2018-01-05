@@ -1,13 +1,15 @@
-(defproject clj-smartystreets "0.1.7-SNAPSHOT"
-  :description "A Clojure library wrapping SmartyStreets' LiveAddress API."
+(defproject democracyworks/clj-smartystreets "0.2.0-SNAPSHOT"
+  :description "A Clojure library wrapping SmartyStreets' Cloud APIs."
   :url "https://github.com/democracyworks/clj-smartystreets"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :lein-min-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [clj-http "3.1.0"]
-                 [cheshire "5.6.3"]]
-  :profiles {:dev {:dependencies [[midje "1.8.3"]]}}
-  :plugins [[lein-midje "3.2"]]
-  :aliases {"test" ["with-profile" "+test" "midje"]}
-  :deploy-repositories {"releases" :clojars})
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [clj-http "3.7.0"]
+                 [cheshire "5.8.0"]]
+  :profiles {:dev {:dependencies [[clj-http-fake "1.0.3"]
+                                  [midje "1.9.1"]]
+                   :repl-options {:init-ns dev.user}
+                   :source-paths ["dev-src"]}}
+  :plugins [[lein-midje "3.2.1"]]
+  :aliases {"test" ["do" ["with-profile" "+test" "midje"]
+                         ["test"]]})
