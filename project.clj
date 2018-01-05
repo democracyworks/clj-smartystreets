@@ -7,7 +7,7 @@
                  [clj-http "3.7.0"]
                  [cheshire "5.8.0"]]
   :profiles {:dev {:dependencies [[clj-http-fake "1.0.3"]
-                                  [midje "1.9.0"]]
+                                  [midje "1.9.1"]]
                    :repl-options {:init-ns dev.user}
                    :source-paths ["dev-src"]}}
   :plugins [[lein-midje "3.2.1"]]
