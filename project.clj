@@ -1,4 +1,4 @@
-(defproject democracyworks/clj-smartystreets "0.2.1"
+(defproject democracyworks/clj-smartystreets "0.2.2-SNAPSHOT"
   :description "A Clojure library wrapping SmartyStreets' Cloud APIs."
   :url "https://github.com/democracyworks/clj-smartystreets"
   :license {:name "Eclipse Public License"
