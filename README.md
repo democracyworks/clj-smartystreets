@@ -10,7 +10,7 @@ A Clojure library wrapping
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
 ```clojure
-[democracyworks/clj-smartystreets "0.2.0"]
+[democracyworks/clj-smartystreets "0.2.1"]
 ```
 
 ## Usage
