@@ -3,7 +3,7 @@
 A Clojure library wrapping
 [SmartyStreets' Cloud APIs](https://smartystreets.com/docs/cloud).
 
-[![Build Status](https://travis-ci.org/democracyworks/clj-smartystreets.svg?branch=master)](https://travis-ci.org/democracyworks/clj-smartystreets)
+![Tests](https://github.com/democracyworks/clj-smartystreets/workflows/Test/badge.svg)
 
 ## Installation
 
