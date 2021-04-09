@@ -1,0 +1,6 @@
+steps:
+  - label: Test
+    command: lein test
+    plugins:
+      - docker#v3.8.0:
+          image: clojure:openjdk-11-lein
