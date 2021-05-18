@@ -106,6 +106,6 @@ $ lein test
 
 ## License
 
-Copyright © 2013-2017 Democracy Works
+Copyright © 2013-2021 Democracy Works
 
 Distributed under the Eclipse Public License, the same as Clojure.
