@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- A fourth arity has been added to the client in order to support per-client
+  query string parameters, for use with parameters such as `license`.
+
 ## [1.0.0] - 2021-05-18
 
 ### Changed
