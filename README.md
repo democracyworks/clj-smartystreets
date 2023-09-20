@@ -10,7 +10,7 @@ A Clojure library wrapping
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
 ```clojure
-[democracyworks/clj-smartystreets "1.0.0"]
+[democracyworks/clj-smartystreets "1.1.0"]
 ```
 
 ## Usage
@@ -106,6 +106,6 @@ $ lein test
 
 ## License
 
-Copyright © 2013-2021 Democracy Works
+Copyright © Democracy Works
 
 Distributed under the Eclipse Public License, the same as Clojure.

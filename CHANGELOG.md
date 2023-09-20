@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-09-19
+
 ### Changed
 
 - A fourth arity has been added to the client in order to support per-client
@@ -23,5 +25,6 @@ and this project adheres to
 - **BREAKING**: The `clj-smartystreets.core` namespace that was deprecated has
   been removed.
 
-[unreleased]: https://github.com/democracyworks/clj-smartystreets/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/democracyworks/clj-smartystreets/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/democracyworks/clj-smartystreets/releases/tag/v1.1.0
 [1.0.0]: https://github.com/democracyworks/clj-smartystreets/releases/tag/v1.0.0
