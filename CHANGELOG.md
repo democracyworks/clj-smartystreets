@@ -14,6 +14,7 @@ and this project adheres to
   query string parameters, for use with parameters such as `license`.
 - Requests sent to smartystreets.com are now sent to smarty.com as part of the
   service's re-brand. This should not have user-visible impact.
+- Updated dependencies.
 
 ## [1.0.0] - 2021-05-18
 
