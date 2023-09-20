@@ -1,7 +1,7 @@
 (ns democracyworks.smartystreets.us-zipcode
-  "SmartyStreets US Zip Code API
+  "Smarty US Zip Code API
 
-  https://smartystreets.com/docs/cloud/us-zipcode-api"
+  https://smarty.com/docs/cloud/us-zipcode-api"
   (:require
    [democracyworks.smartystreets.core :as smartystreets])
   (:import
@@ -16,7 +16,7 @@
 ;;;; HTTP implementation
 
 (def base-url
-  "https://us-zipcode.api.smartystreets.com/lookup")
+  "https://us-zipcode.api.smarty.com/lookup")
 
 (defn parse-response
   "Transform a sequence `s` of maps containing `:input_index` into a vector with
@@ -26,11 +26,11 @@
   (mapv #(dissoc % :input_index) (sort-by :input_index s)))
 
 (defn http-fetch-one
-  "Uses `client` to send a single zipcode `request` to the SmartyStreets API.
+  "Uses `client` to send a single zipcode `request` to the Smarty API.
 
   `request` should be an HTTP input request, described here:
 
-  https://smartystreets.com/docs/cloud/us-zipcode-api#http-request-input-fields
+  https://smarty.com/docs/cloud/us-zipcode-api#http-request-input-fields
 
   Returns the response map API endpoint."
   [client request]
@@ -40,12 +40,12 @@
       (first)))
 
 (defn http-fetch-many
-  "Uses `client` to send a collection of US zipcode `requests` to the
-  SmartyStreets API.
+  "Uses `client` to send a collection of US zipcode `requests` to the Smarty
+  API.
 
   `requests` should be a sequence of HTTP input requests, described here:
 
-  https://smartystreets.com/docs/cloud/us-zipcode-api#http-request-input-fields
+  https://smarty.com/docs/cloud/us-zipcode-api#http-request-input-fields
 
   Returns a vector of response maps at indexes corresponding to their position
   in `requests`."

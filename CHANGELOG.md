@@ -12,6 +12,8 @@ and this project adheres to
 
 - A fourth arity has been added to the client in order to support per-client
   query string parameters, for use with parameters such as `license`.
+- Requests sent to smartystreets.com are now sent to smarty.com as part of the
+  service's re-brand. This should not have user-visible impact.
 
 ## [1.0.0] - 2021-05-18
 

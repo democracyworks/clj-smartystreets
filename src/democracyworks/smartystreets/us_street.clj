@@ -1,7 +1,7 @@
 (ns democracyworks.smartystreets.us-street
-  "SmartyStreets US Street Address API
+  "Smarty US Street Address API
 
-  https://smartystreets.com/docs/cloud/us-street-api"
+  https://smarty.com/docs/cloud/us-street-api"
   (:require
    [democracyworks.smartystreets.core :as smartystreets])
   (:import
@@ -16,7 +16,7 @@
 ;;;; HTTP implementation
 
 (def base-url
-  "https://us-street.api.smartystreets.com/street-address")
+  "https://us-street.api.smarty.com/street-address")
 
 (defn parse-response
   "Transform a sequence `s` of maps containing `:input_index` and
@@ -36,11 +36,11 @@
        (mapv (comp vec vals))))
 
 (defn http-fetch-one
-  "Uses `client` to send a single address `request` to the SmartyStreets API.
+  "Uses `client` to send a single address `request` to the Smarty API.
 
   `request` should be an HTTP input request, described here:
 
-  https://smartystreets.com/docs/cloud/us-street-api#input-fields
+  https://smarty.com/docs/cloud/us-street-api#input-fields
 
   Returns a vector of candidate addresses, or `nil` if no candidate addresses
   were found."
@@ -51,12 +51,11 @@
        (first)))
 
 (defn http-fetch-many
-  "Uses `client` to send a collection of address `requests` to the SmartyStreets
-  API.
+  "Uses `client` to send a collection of address `requests` to the Smarty API.
 
   `requests` should be a collection of HTTP input requests, described here:
 
-  https://smartystreets.com/docs/cloud/us-street-api#input-fields
+  https://smarty.com/docs/cloud/us-street-api#input-fields
 
   Returns a vector with results at indexes corresponding to their position in
   `requests`. Each entry in the vector will be a vector of candidate addresses
