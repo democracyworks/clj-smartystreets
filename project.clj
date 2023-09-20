@@ -8,4 +8,7 @@
                  [cheshire "5.12.0"]]
   :profiles {:dev {:dependencies [[clj-http-fake "1.0.4"]]
                    :repl-options {:init-ns dev.user}
-                   :source-paths ["dev-src"]}})
+                   :source-paths ["dev-src"]}}
+  :deploy-repositories [["clojars"
+                         {:url "https://repo.clojars.org/"
+                          :sign-releases false}]])
